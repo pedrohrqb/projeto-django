@@ -9,9 +9,93 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Cadastro de Usuários</title>
-  </head>
+
+    <!-- Estilo CSS-->
+    <style>
+      * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: rgba(127, 255, 212, 0.432);
+        }
+
+      h1 {
+        padding: 10px;
+        text-align: center;
+        display: block;
+      }
+      nav {
+        padding: 10px;
+        background-image: linear-gradient(to left, blue, red, green);
+      }
+      .nomebar {
+        padding: 15px;
+        color: white;
+        text-decoration: none white;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.404);
+      }
+      .nomebar:hover{
+        color: white;
+        text-decoration: none;
+        border-radius: 3.5px 3.5px 3.5px;
+      }
+      
+      .container-fluid > .nomebar {
+        border: 3px black;
+      }
+      .caixa {
+        margin: auto;
+        text-align: center;
+        flex-direction: column;
+        display: flex;
+        width: 15%;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      input {
+        border-radius: 3.5px 3.5px 3.5px;
+      }
+      button {
+        padding: 5px;
+        margin: auto;
+        text-align: center;
+        display: block;
+        border-radius: 3.5px 3.5px 3.5px;
+        
+        
+      }
+      .botao {
+        padding: 10px;
+      }
+    </style>
   <body>
-    <h1>Cadastro de Usuários</h1>
+  </head>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="nomebar" href="#">Cadastre o usuário aqui</a>
+    </div>
+  </nav>
+  <form action="{% url 'listagem_usuarios' %}" method="post">
+    {% csrf_token %}
+    <div class="principal">
+      <h1>Cadastro de Usuários</h1>
+      <div class="caixa">
+        Nome <input name="nome" type="text">
+        Idade <input name="idade" type="text">
+      </div>
+      <div class="botao">
+        <button> Enviar </button>
+      </div>
+    </div>
+  </form>
+   
 
     <!-- Optional JavaScript; choose one of the two! -->
 
